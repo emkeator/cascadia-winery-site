@@ -1,0 +1,129 @@
+/* @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Sedgwick+Ave+Display'); */
+
+/* @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Playfair+Display'); */
+/* @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300|Josefin+Sans'); */
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab:100|Josefin+Sans:100&thickness=1');
+
+@keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.fullscreen-bg {
+  background-color: #1A1F30; 
+  /* Photo by Erik Ringsmuth on Unsplash */
+  background-image: url('./pnwMobileImg.jpg');
+  background-size: cover;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  /*z-index: -100;*/
+}
+
+.fullscreen-bg-video {
+  margin: 0 auto;
+  width: 100%;
+   display: none; 
+  /* z-index: -100; */
+}
+
+.overlay {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  justify-content: center; 
+  align-items: center;
+  margin: 0;
+  padding: 0;
+
+  color: white;
+  text-align: center;
+  font-family: 'Josefin Slab', serif; 
+  /* font-family: 'Josefin Sans', sans-serif;    */
+  /* font-family: 'Raleway', sans-serif;  */
+  font-size: 200%;
+  text-transform: none;
+  font-weight: 100;
+
+  /* border: 1px solid red;  */
+}
+
+.vsc-controller {
+  display: none;
+}
+
+.overlay h1 {
+  /* border: 1px solid red;  */
+  width: 100%;
+  padding-top: 7%;
+  align-self: center;
+  animation: 
+    fadein 7s;
+}
+
+.arrowDown {
+    width: 13px;
+    height: auto; 
+    /* align-self: bottom;   */
+    /* margin-top: 10px; */
+    position: relative;
+    bottom: 10px; 
+    /* border: 1px solid red; */
+}
+
+
+@keyframes dragonFlight { 
+  
+}
+
+
+
+@keyframes dragonLoop{
+  from {
+        transform: rotate(0deg)
+                   translate(150px)
+                   rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg)
+                   translate(0px) 
+                   rotate(-360deg);
+    }
+}
+
+.dragon {
+  width: 150px;
+  height: auto;
+  
+  position: fixed;
+  top: 60vh;
+  left: 19vw;
+
+  animation:
+    fadein 5s,
+    dragonLoop 5s;
+}
+
+
+@media (min-width: 450px) {
+  .dragon {
+    top: 40vh;
+  }
+}
+
+@media (min-width:700px) {
+  .fullscreen-bg-video {
+    display: block;
+  }
+  .fullscreen-bg {
+    background-image: none;
+  }
+}
