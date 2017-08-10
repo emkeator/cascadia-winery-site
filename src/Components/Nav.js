@@ -5,6 +5,13 @@ import $ from 'jquery';
 
 export default class Nav extends Component {
 
+    componentDidMount() {
+        $('.hiddenItem').hide();
+        $('body').on('click', function(){
+            $('.hiddenItem').hide(800);
+        });
+    }
+
     render() {
 
         return(
@@ -15,7 +22,14 @@ export default class Nav extends Component {
                     <Link to='/events' className="menuItem hiddenItem" id='events'>events</Link>
                     <Link to='/visit' className="menuItem hiddenItem" id='visit'>visit</Link>
                 </div>
-                <span className="menuItem" id='menu' onClick={ () => $('.hiddenItem').fadeToggle(700)}>menu</span>                
+                <span className="menuItem" id='menu' onClick={ () => {
+                                                                        let me = $('.hiddenItem');
+                                                                        if(me.is(':visible')) {
+                                                                            me.hide(800);
+                                                                        }else {
+                                                                            me.show(800);
+                                                                        }
+                                                                    }}>menu</span>                
             </nav>
         );
     }

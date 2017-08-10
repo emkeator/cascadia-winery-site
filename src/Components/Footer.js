@@ -6,7 +6,12 @@ import lonelyMtn from './../LonleyMtnLogoBlack.jpg';
 import $ from 'jquery';
 
 export default class Footer extends Component {
-    
+    constructor() {
+        super();
+        //state, record social, and news, and featured wine
+    }
+
+    //component did mount for axios APi calls!
 
     render() {
         return(
