@@ -58,18 +58,18 @@ export default class Wines extends Component {
                 cartTotal: sum
             }
         });
+        this.saveCartState();
     }
 
     checkout() {
-        let prods = this.state.cart.productsInCart.slice(0);
-        let quant = this.state.cart.quantityInCart.slice(0);
         this.setState({
             cart: {
-                productsInCart: prods,
-                quantityInCart: quant,
+                productsInCart: [],
+                quantityInCart: [],
                 cartTotal: 0
             }
         });
+        this.saveCartState();
         alert('Sorry, this is only a class project, not a real site.'+
         ' But hey, here\'s a guide to real wineries near Seattle: '+
         'https://www.thrillist.com/drink/seattle/a-guide-to-the-best-washington-wineries');
@@ -77,6 +77,8 @@ export default class Wines extends Component {
 
     componentDidMount() {
         $('body').scrollTop(0);
+        
+        
     }
 
     render() {
