@@ -1,6 +1,4 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router-dom';
-import axios from 'axios'
 import dragon from './../../dragonWhite.png';
 import $ from 'jquery';
 import wedding from './weddingHex.jpg';
@@ -76,7 +74,7 @@ export default class Events extends Component {
                                             me.show(800);
                                         }
                                     }
-                                }><img src={event.img} className="eventImg"/><h1 style={{display: 'inline'}}>|| {event.name}</h1></span>
+                                }><img src={event.img} alt="wine"className="eventImg"/><h1 style={{display: 'inline'}}>|| {event.name}</h1></span>
                                 <div className="eventDescription">{event.description}</div>
                             </div>
                         )

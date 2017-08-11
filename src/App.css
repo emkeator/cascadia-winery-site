@@ -8,6 +8,7 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Slab:100|Josefin+Sans:100&thickness=1");
 @import url("https://fonts.googleapis.com/css?family=Josefin+Slab:100|Josefin+Sans:100&thickness=1");
 @import url("https://fonts.googleapis.com/css?family=Josefin+Slab:100|Josefin+Sans:100&thickness=1");
+@import url("https://fonts.googleapis.com/css?family=Josefin+Slab:100|Josefin+Sans:100&thickness=1");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -157,7 +158,9 @@ table {
   height: auto;
   position: fixed;
   bottom: 15vh;
-  left: 28vw;
+  left: 28vw; }
+
+.fly {
   animation: fadein 5s, dragonLoop 5s; }
 
 @media (min-width: 450px) and (min-height: 600px) {
@@ -435,6 +438,12 @@ table {
   .listDescrip {
     font-size: 1.6rem; } }
 
+.mapContain {
+  width: 100vw;
+  height: calc(60vh + 10px);
+  background: black;
+  margin-top: 50px; }
+
 .wineHeader {
   color: white;
   background-color: black;
@@ -477,7 +486,7 @@ table {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  border: 1px dotted #A00909;
+  border: 1px dotted #C42C00;
   border-radius: 30%;
   padding: 20px 30px;
   z-index: 2;
@@ -525,3 +534,49 @@ table {
     right: 10px; }
     .cart button {
       font-size: 0.7em; } }
+
+.visitHeader {
+  color: white;
+  background-color: black;
+  width: 100vw;
+  height: 15vh;
+  text-align: center;
+  padding-top: 50px;
+  position: relative;
+  font-family: "Josefin Slab", serif;
+  font-size: 2.8rem;
+  z-index: 2; }
+  .visitHeader img {
+    width: 90px;
+    height: auto;
+    transform: scale(-1, 1);
+    position: fixed;
+    top: calc(8vh + 50px);
+    right: calc(67% - 150px);
+    z-index: 2;
+    opacity: 0.4; }
+
+.visitInfo {
+  width: 100vw;
+  position: relative;
+  color: white;
+  background-color: black;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 50px 0; }
+  .visitInfo p {
+    margin: 15px 0; }
+    .visitInfo p a, .visitInfo p Link {
+      color: #C42C00;
+      text-decoration: none; }
+
+@media (min-height: 600px) and (min-width: 600px) {
+  .visitHeader img {
+    width: 150px;
+    top: calc(8vh);
+    right: calc(40% - 150px); } }
+
+@media (min-width: 800px) {
+  .visitHeader {
+    font-size: 4rem; } }

@@ -3,7 +3,6 @@ import './App.css';
 import Nav from './Components/Nav';
 import Footer from './Components/Footer';
 import router from './router';
-import $ from 'jquery';
 import redWine from './Components/Events/redWineHex.jpg';
 import pikePlace from './Components/Events/pikePlaceHex.jpg';
 

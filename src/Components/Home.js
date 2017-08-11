@@ -1,11 +1,18 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router-dom';
 import $ from 'jquery';
 import video from './../pnw.mp4';
-import arrowDown from './../arrow.png';
+import arrow from './../arrow.png';
 import dragon from './../dragonWhite.png';
 
 export default class Home extends Component {
+
+    // burninate() {
+    //     $('.dragon').removeClass('fly');
+    //     setTimeout(() => {
+    //         $('.dragon').addClass('fly');
+    //     }, 500);
+    //     console.log('BURNINATE');
+    // }
 
     render() {
 
@@ -25,9 +32,9 @@ export default class Home extends Component {
                 </video>
             </div>
             <div className="overlay">
-                <h1 className="homeTitle">Lonely Mountain Winery</h1>
-                <img src={dragon} className="homeDragon"/>
-                <img src={arrowDown} className="arrowDown" onClick={() => {scrollDown()}}/>
+                <h1 className="homeTitle" >Lonely Mountain Winery</h1>
+                <img src={dragon} className="homeDragon fly" alt="dragon" />
+                <img src={arrow} className="arrowDown" alt="arrow down" onClick={() => {scrollDown()}}/>
             </div>
         </div>
         );
