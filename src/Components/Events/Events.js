@@ -1,13 +1,12 @@
 import React, {Component} from 'react'
-import './Events.css';
 import {Link} from 'react-router-dom';
 import axios from 'axios'
 import dragon from './../../dragonWhite.png';
 import $ from 'jquery';
-import wedding from './wedding.png';
-import wine from './wine.png';
-import pikePlace from './pikePlace.png';
-import redWine from './redWine.png';
+import wedding from './weddingHex.jpg';
+import wine from './wineHex.jpg';
+import pikePlace from './pikePlaceHex.jpg';
+import redWine from './redWineHex.jpg';
 
 export default class Events extends Component {
     
@@ -18,26 +17,26 @@ export default class Events extends Component {
             events: [
                 {
                     name: 'Weddings',
-                    id: 'wedding',
                     img: wedding,
+                    id: 'wedding',
                     description: 'Gorgeous, personalized ceremonies and stunning receptions for up to 200 guests may be held at Lonely Mountain. We have several venues to choose from, including a chapel in the forest and an outdoor venue on the mountainside. Please inquire for more information.'
                 },
                 {
                     name: 'Parties',
-                    id: 'party',
                     img: wine,
+                    id: 'party',
                     description: 'Small parties and any other occasions deserving of a breathtaking venue. Private tasting included for the group. Catering onsite is available from a list of local vendors, and menus vary seasonally. Please inquire for more information.'
                 },
                 {
                     name: 'Business Retreats',
-                    id: 'retreat',
                     img: pikePlace,
+                    id: 'business',
                     description: 'With Seattle nearby, plenty of businesses love to give employees a well-deserved retreat at Lonely Mountain. Activities can be arranged, both onsite and in the area, as part of the retreat. Please inquire for more information.'
                 },
                 {
                     name: 'Public Events',
-                    id: 'publicEvent',
                     img: redWine,
+                    id: 'publicEvents',
                     description: (
                         <ul>
                             <li>Art and Wine, 7pm 8//28//17<br/><em className="listDescrip"> A night of painting and wine tasting. Materials provided as part of cost.</em></li>
@@ -52,6 +51,7 @@ export default class Events extends Component {
 
     componentDidMount() {
         $('.eventDescription').hide();
+        $('body').scrollTop(0);
     }
 
     submitInformation() {
@@ -67,19 +67,17 @@ export default class Events extends Component {
                 <section className="eventContainer">
                      {this.state.events.map((event, index)=>{
                         return (
-                            <div key={index} className={"event " + event.id}>
-                                <div className="eventInfo">
-                                    <span className="eventTitle" onClick={ () => {
-                                                                                    let me = $(`.${event.id} .eventDescription`);
-                                                                                    if(me.is(':visible')) {
-                                                                                        me.hide(800);
-                                                                                    }else {
-                                                                                        me.show(800);
-                                                                                    }
-                                                                                }
-                                    }><img src={event.img} className="eventImg"/><h1 style={{display: 'inline'}}>|| {event.name}</h1></span>
-                                    <div className="eventDescription">{event.description}</div>
-                                </div>
+                            <div key={index} className={"eventInfo "+ event.id}>
+                                <span className="eventTitle" onClick={ () => {
+                                        let me = $(`.${event.id} .eventDescription`);
+                                        if(me.is(':visible')) {
+                                            me.hide(800);
+                                        }else {
+                                            me.show(800);
+                                        }
+                                    }
+                                }><img src={event.img} className="eventImg"/><h1 style={{display: 'inline'}}>|| {event.name}</h1></span>
+                                <div className="eventDescription">{event.description}</div>
                             </div>
                         )
                     })} 

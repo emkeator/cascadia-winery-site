@@ -1,5 +1,4 @@
-import React, {Component} from 'react'
-import './Wines.css';
+import React, {Component} from 'react';
 import dragon from './../../dragonWhite.png';
 import $ from 'jquery';
 
@@ -76,6 +75,9 @@ export default class Wines extends Component {
         'https://www.thrillist.com/drink/seattle/a-guide-to-the-best-washington-wineries');
     }
 
+    componentDidMount() {
+        $('body').scrollTop(0);
+    }
 
     render() {
 
@@ -87,17 +89,17 @@ export default class Wines extends Component {
                     {this.state.wines.map((wine, index)=>{
                         return (
                             <div key={index} className="wineProduct">
-                                <h1 className="wineTitle">{wine.name}</h1>
-                                <p className="wineDescription">{wine.description}</p>
+                                <h1>{wine.name}</h1>
+                                <p>{wine.description}</p>
                                 <p>${wine.price}.00</p>
-                                <button className="wineBuy" disabled={false} onClick={()=>this.addProduct(wine)}>Collect</button>
+                                <button disabled={false} onClick={()=>this.addProduct(wine)}>Collect</button>
                             </div>
                         )
                     })}
                     <div className="cart">
                         <h1>Total</h1>
                         <h1>${this.state.cart.cartTotal}.00</h1>
-                        <button className="wineBuy" disabled={this.state.cart.cartTotal === 0} 
+                        <button disabled={this.state.cart.cartTotal === 0} 
                                 onClick={()=> this.checkout()}>Checkout</button>
                     </div>
                 </section>
