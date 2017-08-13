@@ -7,7 +7,9 @@ export default class Nav extends Component {
     componentDidMount() {
         $('.hiddenItem').hide();
         $('body').on('click', function(){
-            $('.hiddenItem').hide(800);
+            if ($('.hiddenItem').css('display') === 'block') {
+                    $('.hiddenItem').fadeOut(700);
+                }
         });
     }
 
@@ -22,13 +24,13 @@ export default class Nav extends Component {
                     <Link to='/visit' className="navMenuItem hiddenItem" id='visit'>visit</Link>
                 </div>
                 <span className="navMenuItem" id='menu' onClick={ () => {
-                                                                        let me = $('.hiddenItem');
-                                                                        if(me.is(':visible')) {
-                                                                            me.hide(800);
-                                                                        }else {
-                                                                            me.show(800);
-                                                                        }
-                                                                    }}>menu</span>                
+                        let me = $('.hiddenItem');
+                        if(me.css('display') === 'block'){
+                            me.fadeOut(700);
+                        }else {
+                            me.fadeIn(700);
+                        }
+                    }}>menu</span>                
             </nav>
         );
     }

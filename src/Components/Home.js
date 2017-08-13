@@ -6,14 +6,6 @@ import dragon from './../dragonWhite.png';
 
 export default class Home extends Component {
 
-    // burninate() {
-    //     $('.dragon').removeClass('fly');
-    //     setTimeout(() => {
-    //         $('.dragon').addClass('fly');
-    //     }, 500);
-    //     console.log('BURNINATE');
-    // }
-
     render() {
 
         function scrollDown() {

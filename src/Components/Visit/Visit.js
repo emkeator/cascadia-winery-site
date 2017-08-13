@@ -16,7 +16,7 @@ export default class Visit extends Component {
             <div>
                 <header className="visitHeader">Visit Lonely Mountain<img src={dragon} alt='dragon'/></header>
                 <section className="visitInfo">
-                    <p>We are located at <a href="https://www.google.com/maps/search/best+seattle+wineries">3 Rivendell Road, Dale, WA 98061</a>.</p>
+                    <p>We are located at <a href="https://www.google.com/maps/search/best+seattle+wineries" target="_blank">3 Rivendell Road, Dale, WA 98061</a>.</p>
                     <p>Distance from Seattle: approximately 1 hour.</p>
                     <p>Come join us for one of our many <Link to="/events">events</Link>!</p>  
                     <MapContainer />                 
